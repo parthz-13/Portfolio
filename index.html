@@ -1,144 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
 
-  <title>Parth Kumar Singh | Backend Developer</title>
-</head>
-<body>
+    <title>Parth Kumar Singh | Backend Developer</title>
+  </head>
+  <body>
+    <nav>
+      <div class="left">
+        <h3>☯ Parth Kumar Singh</h3>
+      </div>
+      <div class="right">
+        <a href="https://github.com/parthz-13" target="_blank">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a href="mailto:parthsingh1006@gmail.com">
+          <i class="fa-solid fa-envelope"></i> Email
+        </a>
+      </div>
+    </nav>
 
+    <main>
+      <section class="hero-section">
+        <div class="text">
+          <h2>👾 Backend-Focused Developer 👾</h2>
+          <p>
+            I’m Parth Kumar Singh, a backend-focused developer pursuing a B.Tech
+            in Computer Science (AI & ML). I specialize in building scalable
+            REST APIs using <b>FastAPI</b>, designing clean backend
+            architectures, and working with both relational and NoSQL databases.
+            <br /><br />
+            I enjoy solving real-world problems through backend systems,
+            exploring AI-powered features responsibly, and contributing to
+            open-source software.
+          </p>
 
-  <nav>
-    <div class="left">
-      <h3>☯ Parth Kumar Singh</h3>
-    </div>
-    <div class="right">
-      <a href="https://github.com/parthz-13" target="_blank">
-        <i class="fa-brands fa-github"></i> GitHub
-      </a>
-      <a href="mailto:parthsingh1006@gmail.com">
-        <i class="fa-solid fa-envelope"></i> Email
-      </a>
-    </div>
-  </nav>
-
-  <main>
-
-
-    <section class="hero-section">
-      <div class="text">
-        <h2>👾 Backend-Focused Developer 👾</h2>
-        <p>
-          I’m Parth Kumar Singh, a backend-focused developer pursuing a B.Tech in
-          Computer Science (AI & ML). I specialize in building scalable REST APIs
-          using <b>FastAPI</b>, designing clean backend architectures, and working
-          with both relational and NoSQL databases.
-          <br /><br />
-          I enjoy solving real-world problems through backend systems, exploring
-          AI-powered features responsibly, and contributing to open-source
-          software.
-        </p>
-
-        <div class="links">
-          <a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a>
-          <a href="#skills"><i class="fa-solid fa-code"></i> Skills</a>
+          <div class="links">
+            <a href="#projects"
+              ><i class="fa-solid fa-diagram-project"></i> Projects</a
+            >
+            <a href="#skills"><i class="fa-solid fa-code"></i> Skills</a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
+      <section id="skills" class="skills-section">
+        <h2>☯ Technical Skills</h2>
+        <br />
 
-    <section id="skills" class="skills-section">
-      <h2>☯ Technical Skills</h2>
-      <br>
+        <div class="text">
+          <h4>Backend Development</h4>
+          <p>
+            • FastAPI, REST API design, request validation, authentication
+            workflows<br />
+            • Clean architecture, modular codebases, performance considerations
+          </p>
+          <br />
 
-      <div class="text">
-        <h4>Backend Development</h4>
+          <h4>Databases & ORM</h4>
+          <p>
+            • SQL (MySQL), NoSQL (MongoDB)<br />
+            • Prisma ORM, schema design, relational modeling
+          </p>
+          <br />
+          <h4>Programming & Tools</h4>
+          <p>
+            • Python (primary), JavaScript (working knowledge)<br />
+            • Git, GitHub, VS Code
+          </p>
+          <br />
+          <h4>AI Integration</h4>
+          <p>
+            • LLM integration (Groq, Llama 3.3)<br />
+            • Prompt engineering, PDF data extraction, AI-powered analysis
+          </p>
+          <br />
+        </div>
+
+        <div class="cells">
+          <div class="cell"><span>Python</span></div>
+          <div class="cell"><span>FastAPI</span></div>
+          <div class="cell"><span>JavaScript</span></div>
+          <div class="cell"><span>NodeJS</span></div>
+          <div class="cell"><span>ExpressJS</span></div>
+          <div class="cell"><span>ReactJS</span></div>
+          <div class="cell"><span>Git & GitHub</span></div>
+          <div class="cell"><span>SQL</span></div>
+          <div class="cell"><span>MongoDB</span></div>
+          <div class="cell"><span>Prisma</span></div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects-section">
+        <h2>☯ Projects</h2>
+        <br />
+
+        <div class="text">
+          <h3>RAG Knowledge Retrieval API</h3>
+          <p>
+            Tech: Python, FastAPI, ChromaDB, Groq LLM, REST API <br />
+            • Developed a Retrieval-Augmented Generation (RAG) backend
+            application using FastAPI to enable semantic search and question
+            answering over custom knowledge.<br />
+            • Implemented vector embedding storage and retrieval using ChromaDB
+            for similarity-based context extraction.<br />
+            • Integrated an external LLM inference API (Groq – LLaMA-3.1-8B) to
+            generate context-aware responses.<br />
+            • Deployed a self-documented REST API with Swagger UI, enabling
+            interactive testing and demonstration of functionality.
+          </p>
+          <a
+            href="https://github.com/parthz-13/RAG-Based-Knowledge-Retrieval-API"
+            target="_blank"
+            >GitHub</a
+          >
+          |
+          <a
+            href="https://rag-based-knowledge-retrieval-api.onrender.com/docs"
+            target="_blank"
+            >Live Demo</a
+          >
+
+          <br /><br />
+          <h3>ElevateCV — AI Resume Reviewer</h3>
+          <p>
+            • Built a high-performance FastAPI backend for resume analysis<br />
+            • Integrated Llama-3.3 via Groq for AI-powered insights<br />
+            • Designed scalable PDF processing pipeline
+          </p>
+          <a href="https://github.com/parthz-13/ElevateCV" target="_blank"
+            >GitHub</a
+          >
+          |
+          <a href="https://elevate-cv-seven.vercel.app/" target="_blank"
+            >Live Demo</a
+          >
+
+          <br /><br />
+
+          <h3>FeedHub — Public Feedback Platform</h3>
+          <p>
+            • Designed REST APIs with full CRUD functionality<br />
+            • Implemented authentication and secure data handling<br />
+            • Prisma ORM with relational database schema
+          </p>
+          <a href="https://github.com/parthz-13/FeedHub" target="_blank"
+            >GitHub</a
+          >
+          |
+          <a href="https://feed-hub-nine.vercel.app/" target="_blank"
+            >Live Demo</a
+          >
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section">
+        <h2>☯ Contact</h2>
         <p>
-          • FastAPI, REST API design, request validation, authentication workflows<br />
-          • Clean architecture, modular codebases, performance considerations
+          Email:
+          <a href="mailto:parthsingh1006@gmail.com">parthsingh1006@gmail.com</a
+          ><br />
+          GitHub: <a href="https://github.com/parthz-13">@parthz-13</a><br />
+          LeetCode: <a href="https://leetcode.com/u/_p4rth/">@_p4rth</a>
         </p>
-        <br>
-
-        <h4>Databases & ORM</h4>
-        <p>
-          • SQL (MySQL), NoSQL (MongoDB)<br />
-          • Prisma ORM, schema design, relational modeling
-        </p>
-          <br>
-        <h4>Programming & Tools</h4>
-        <p>
-          • Python (primary), JavaScript (working knowledge)<br />
-          • Git, GitHub, VS Code
-        </p>
-        <br>
-        <h4>AI Integration</h4>
-        <p>
-          • LLM integration (Groq, Llama 3.3)<br />
-          • Prompt engineering, PDF data extraction, AI-powered analysis
-        </p>
-        <br>
-      </div>
-
-      <div class="cells">
-        <div class="cell"><span>Python</span></div>
-        <div class="cell"><span>FastAPI</span></div>
-        <div class="cell"><span>JavaScript</span></div>
-        <div class="cell"><span>NodeJS</span></div>
-        <div class="cell"><span>ExpressJS</span></div>
-        <div class="cell"><span>ReactJS</span></div>
-        <div class="cell"><span>Git & GitHub</span></div>
-        <div class="cell"><span>SQL</span></div>
-        <div class="cell"><span>MongoDB</span></div>
-        <div class="cell"><span>Prisma</span></div>
-      </div>
-    </section>
-
-
-    <section id="projects" class="projects-section">
-      <h2>☯ Projects</h2>
-      <br>
-
-      <div class="text">
-        <h3>ElevateCV — AI Resume Reviewer</h3>
-        <p>
-          • Built a high-performance FastAPI backend for resume analysis<br />
-          • Integrated Llama-3.3 via Groq for AI-powered insights<br />
-          • Designed scalable PDF processing pipeline
-        </p>
-        <a href="https://github.com/parthz-13/ElevateCV" target="_blank">GitHub</a> |
-        <a href="https://elevate-cv-seven.vercel.app/" target="_blank">Live Demo</a>
-
-        <br /><br />
-
-        <h3>FeedHub — Public Feedback Platform</h3>
-        <p>
-          • Designed REST APIs with full CRUD functionality<br />
-          • Implemented authentication and secure data handling<br />
-          • Prisma ORM with relational database schema
-        </p>
-        <a href="https://github.com/parthz-13/FeedHub" target="_blank">GitHub</a> |
-        <a href="https://feed-hub-nine.vercel.app/" target="_blank">Live Demo</a>
-      </div>
-    </section>
-
-
-    <section id="contact" class="contact-section">
-      <h2>☯ Contact</h2>
-      <p>
-        Email: <a href="mailto:parthsingh1006@gmail.com">parthsingh1006@gmail.com</a><br />
-        GitHub: <a href="https://github.com/parthz-13">@parthz-13</a><br />
-        LeetCode: <a href="https://leetcode.com/u/_p4rth/">@_p4rth</a>
-      </p>
-    </section>
-
-  </main>
-</body>
+      </section>
+    </main>
+  </body>
 </html>
