@@ -3,190 +3,571 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parth Singh | Backend Developer & AI Builder</title>
 
+    <!-- Fonts: Inter + JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              mono: ['"JetBrains Mono"', 'monospace'],
+              sans: ['Inter', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+
     <link rel="stylesheet" href="styles.css" />
-
-    <title>Parth Kumar Singh | Backend Developer</title>
   </head>
-  <body>
-    <nav>
-      <div class="left">
-        <h3>☯ Parth Kumar Singh</h3>
-      </div>
-      <div class="right">
-        <a href="https://github.com/parthz-13" target="_blank">
-          <i class="fa-brands fa-github"></i> GitHub
+
+  <body class="font-sans bg-white text-slate-800 antialiased overflow-x-hidden">
+
+    <!-- Floating dot canvas (hero bg) -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- ════════════════ NAVBAR ════════════════ -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 shadow-sm">
+      <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+
+        <!-- Brand -->
+        <a href="#" class="font-mono text-base font-medium text-slate-800 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-amber-400 inline-block animate-pulse"></span>
+          parth.singh
         </a>
-        <a href="mailto:parthsingh1006@gmail.com">
-          <i class="fa-solid fa-envelope"></i> Email
-        </a>
+
+        <!-- Desktop nav links -->
+        <div class="hidden md:flex items-center gap-6 text-sm text-slate-500 font-medium">
+          <a href="#" class="nav-link hover:text-amber-500 transition-colors">Home</a>
+          <a href="#experience" class="nav-link hover:text-amber-500 transition-colors">Experience</a>
+          <a href="#skills" class="nav-link hover:text-amber-500 transition-colors">Skills</a>
+          <a href="#projects" class="nav-link hover:text-amber-500 transition-colors">Projects</a>
+          <a href="#contact" class="nav-link hover:text-amber-500 transition-colors">Contact</a>
+        </div>
+
+        <!-- Action buttons -->
+        <div class="flex items-center gap-2">
+          <a href="https://github.com/parthz-13" target="_blank"
+             class="flex items-center gap-1.5 px-4 py-2 rounded-full border border-slate-200 text-slate-600 hover:border-amber-400 hover:text-amber-600 transition-all text-sm font-medium">
+            <i class="fa-brands fa-github text-sm"></i>
+            <span class="hidden sm:inline">GitHub</span>
+          </a>
+          <a href="mailto:workparthwork@gmail.com"
+             class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-amber-400 text-white hover:bg-amber-500 transition-all text-sm font-medium shadow-sm shadow-amber-100">
+            <i class="fa-solid fa-envelope text-sm"></i>
+            <span class="hidden sm:inline">Email</span>
+          </a>
+        </div>
       </div>
     </nav>
 
     <main>
-      <section class="hero-section">
-        <div class="text">
-          <h2>👾 Backend Developer 👾</h2>
-          <p>
-            I’m Parth Kumar Singh, a backend-focused developer pursuing a B.Tech
-            in Computer Science (AI & ML). I specialize in building scalable
-            REST APIs using <b>FastAPI</b>, designing clean backend
-            architectures, and working with both relational and NoSQL databases.
-            <br /><br />
-            I enjoy solving real-world problems through backend systems,
-            exploring AI-powered features responsibly, and contributing to
-            open-source software.
+
+      <!-- ════════════════ HERO ════════════════ -->
+      <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-white">
+        <!-- Dot grid overlay -->
+        <div class="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+        <!-- Warm amber glow (top-right) -->
+        <div class="absolute -top-32 -right-32 w-96 h-96 bg-amber-100 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-6 py-24 text-center">
+
+          <!-- Status badge -->
+
+
+          <!-- Name -->
+          <h1 class="text-5xl sm:text-7xl font-bold text-slate-900 mb-4 tracking-tight">
+            I'm Parth Singh.
+          </h1>
+
+          <!-- Typewriter subtitle -->
+          <div class="text-2xl sm:text-3xl font-semibold mb-6 h-10 flex items-center justify-center gap-2">
+            <span class="text-amber-500 font-mono" id="typewriter"></span>
+          </div>
+
+          <!-- Bio -->
+          <p class="text-slate-500 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+            Backend-first full-stack developer specializing in <span class="text-slate-700 font-medium">FastAPI</span>, RESTful API design, and AI-powered systems. Pursuing B.E. in AI &amp; ML at Newton School of Technology. Open-source contributor to <span class="text-slate-700 font-medium">Highcharts</span>.
           </p>
 
-          <div class="links">
+          <!-- CTA row -->
+          <div class="flex flex-wrap items-center justify-center gap-3">
             <a href="#projects"
-              ><i class="fa-solid fa-diagram-project"></i> Projects</a
-            >
-            <a href="#skills"><i class="fa-solid fa-code"></i> Skills</a>
+               class="group flex items-center gap-2 px-6 py-3 bg-amber-400 text-white rounded-full font-medium text-sm hover:bg-amber-500 transition-all shadow-md shadow-amber-100 hover:-translate-y-0.5">
+              <span class="font-mono text-amber-200 group-hover:text-amber-100">&gt;</span> Projects
+            </a>
+            <a href="#experience"
+               class="group flex items-center gap-2 px-6 py-3 border-2 border-amber-300 text-amber-600 rounded-full font-medium text-sm hover:bg-amber-50 transition-all hover:-translate-y-0.5">
+              <span class="font-mono">&gt;</span> Experience
+            </a>
+            <a href="#skills"
+               class="group flex items-center gap-2 px-6 py-3 border-2 border-slate-200 text-slate-600 rounded-full font-medium text-sm hover:border-slate-300 hover:bg-slate-50 transition-all hover:-translate-y-0.5">
+              <span class="font-mono">&gt;</span> Skills
+            </a>
+          </div>
+
+          <!-- Scroll chevron -->
+          <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-slate-300">
+            <i class="fa-solid fa-chevron-down text-lg"></i>
           </div>
         </div>
       </section>
 
-      <section id="skills" class="skills-section">
-        <h2>☯ Technical Skills</h2>
-        <br />
+      <!-- ════════════════ EXPERIENCE ════════════════ -->
+      <section id="experience" class="py-24 px-6 bg-slate-50">
+        <div class="max-w-5xl mx-auto reveal">
+          <p class="font-mono text-sm text-amber-600 mb-2 tracking-wider">// experience</p>
+          <h2 class="text-3xl font-bold text-slate-900 mb-12">Where I've Worked</h2>
 
-        <div class="text">
-          <h4>Backend Development</h4>
-          <p>
-            • FastAPI, REST API design, request validation, authentication
-            workflows<br />
-            • Clean architecture, modular codebases, performance considerations
-          </p>
-          <br />
-
-          <h4>Databases & ORM</h4>
-          <p>
-            • SQL (MySQL), NoSQL (MongoDB)<br />
-            • Prisma ORM, schema design, relational modeling
-          </p>
-          <br />
-          <h4>Programming & Tools</h4>
-          <p>
-            • Python (primary), JavaScript (working knowledge)<br />
-            • Git, GitHub, VS Code
-          </p>
-          <br />
-          <h4>AI Integration</h4>
-          <p>
-            • LLM integration (Groq, Llama 3.3)<br />
-            • Prompt engineering, PDF data extraction, AI-powered analysis
-          </p>
-          <br />
-        </div>
-
-        <div class="cells">
-          <div class="cell"><span>Python</span></div>
-          <div class="cell"><span>FastAPI</span></div>
-          <div class="cell"><span>JavaScript</span></div>
-          <div class="cell"><span>NodeJS</span></div>
-          <div class="cell"><span>ExpressJS</span></div>
-          <div class="cell"><span>ReactJS</span></div>
-          <div class="cell"><span>Git & GitHub</span></div>
-          <div class="cell"><span>SQL</span></div>
-          <div class="cell"><span>MongoDB</span></div>
-          <div class="cell"><span>Prisma</span></div>
+          <div class="border-l-4 border-amber-400 pl-6 ml-1">
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 hover:shadow-md transition-shadow">
+              <div class="flex flex-wrap items-start justify-between gap-3 mb-5">
+                <div>
+                  <h3 class="text-lg font-semibold text-slate-900">Full Stack Developer</h3>
+                  <p class="text-amber-600 font-medium text-sm font-mono mt-0.5">Elan Exports Consultancy </p>
+                </div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="font-mono text-xs text-slate-500 bg-slate-50 border border-slate-100 px-3 py-1 rounded-full">Feb 2026 &ndash; May 2026</span>
+                  <a href="https://drive.google.com/file/d/1ZMdqEIiQvOkhd24mMHdRvR9oM6GIiD5r/view?usp=sharing" target="_blank"
+                     class="flex items-center gap-1.5 text-xs text-amber-600 hover:text-amber-800 font-medium border border-amber-200 px-3 py-1 rounded-full hover:bg-amber-50 transition-all">
+                    <i class="fa-solid fa-certificate text-xs"></i> View Certificate
+                  </a>
+                </div>
+              </div>
+              <ul class="space-y-2.5 text-sm text-slate-600">
+                <li class="flex items-start gap-2.5">
+                  <span class="text-amber-400 font-mono mt-0.5 shrink-0">▸</span>
+                  Led the development of a custom CRM platform from scratch for supplier and buyer relationship management.
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-amber-400 font-mono mt-0.5 shrink-0">▸</span>
+                  Designed an n8n workflow to automate lead generation and data enrichment.
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-amber-400 font-mono mt-0.5 shrink-0">▸</span>
+                  Evaluated business processes and proposed automation-driven improvements.
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-amber-400 font-mono mt-0.5 shrink-0">▸</span>
+                  Translated business needs into technical solutions in collaboration with stakeholders.
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="projects" class="projects-section">
-        <h2>☯ Projects</h2>
-        <br />
+      <!-- ════════════════ SKILLS ════════════════ -->
+      <section id="skills" class="py-24 px-6 bg-white">
+        <div class="max-w-5xl mx-auto reveal">
+          <p class="font-mono text-sm text-amber-600 mb-2 tracking-wider">// skills</p>
+          <h2 class="text-3xl font-bold text-slate-900 mb-12">Technical Arsenal</h2>
 
-        <div class="text">
-              <h3>AskYourPDF - Document Intelligence System</h3>
-              
-          <p>
-          Tech: Python, FastAPI, React, PostgreSQL(Neon), Groq API, Qdrant, Jina AI <br />
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
+            <div class="skill-card bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:shadow-md hover:border-amber-200 transition-all">
+              <div class="flex items-center gap-2.5 mb-4">
+                <span class="w-8 h-8 bg-amber-50 rounded-lg flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-file-code text-amber-500 text-sm"></i>
+                </span>
+                <h3 class="font-semibold text-slate-700 text-sm">Languages</h3>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-pill">Python</span>
+                <span class="skill-pill">JavaScript</span>
+                <span class="skill-pill">TypeScript</span>
+                <span class="skill-pill">SQL</span>
+                <span class="skill-pill">HTML / CSS</span>
+              </div>
+            </div>
 
-• Engineered a full-stack RAG (Retrieval-Augmented Generation) application enabling users to upload PDFs and query them using natural language, achieving 95%+ accuracy on document-specific questions with intelligent fallback to general knowledge.<br />
+            <div class="skill-card bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:shadow-md hover:border-amber-200 transition-all">
+              <div class="flex items-center gap-2.5 mb-4">
+                <span class="w-8 h-8 bg-amber-50 rounded-lg flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-layer-group text-amber-500 text-sm"></i>
+                </span>
+                <h3 class="font-semibold text-slate-700 text-sm">Frameworks</h3>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-pill">FastAPI</span>
+                <span class="skill-pill">React</span>
+                <span class="skill-pill">Node.js</span>
+                <span class="skill-pill">Express.js</span>
+                <span class="skill-pill">React Native</span>
+              </div>
+            </div>
 
-• Implemented semantic search using Qdrant vector database with Jina AI embeddings (768-dim) and LLM integration (Groq API) for accurate information retrieval from user documents.<br />
+            <div class="skill-card bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:shadow-md hover:border-amber-200 transition-all">
+              <div class="flex items-center gap-2.5 mb-4">
+                <span class="w-8 h-8 bg-amber-50 rounded-lg flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-database text-amber-500 text-sm"></i>
+                </span>
+                <h3 class="font-semibold text-slate-700 text-sm">Databases</h3>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-pill">PostgreSQL</span>
+                <span class="skill-pill">MongoDB</span>
+                <span class="skill-pill">MySQL</span>
+                <span class="skill-pill">ChromaDB</span>
+                <span class="skill-pill">Qdrant</span>
+              </div>
+            </div>
 
-• Developed REST API with JWT authentication, user management and document versioning using FastAPI and PostgreSQL.<br />
+            <div class="skill-card bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:shadow-md hover:border-amber-200 transition-all">
+              <div class="flex items-center gap-2.5 mb-4">
+                <span class="w-8 h-8 bg-amber-50 rounded-lg flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-robot text-amber-500 text-sm"></i>
+                </span>
+                <h3 class="font-semibold text-slate-700 text-sm">AI / ML</h3>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-pill">RAG</span>
+                <span class="skill-pill">LangChain</span>
+                <span class="skill-pill">Groq</span>
+                <span class="skill-pill">LLaMA</span>
+                <span class="skill-pill">Vector Embeddings</span>
+                <span class="skill-pill">Prompt Engineering</span>
+              </div>
+            </div>
 
-• Created responsive React frontend for document upload, real-time querying, and document deletion.
-          </p>
-          <a href="https://github.com/parthz-13/Document-Intelligence-System" target="_blank"
-            >GitHub</a
-          >
-          |
-          <a href="https://document-intelligence-system-ten.vercel.app/" target="_blank"
-            >Live Demo</a
-          >
+            <div class="skill-card bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:shadow-md hover:border-amber-200 transition-all sm:col-span-2 lg:col-span-2">
+              <div class="flex items-center gap-2.5 mb-4">
+                <span class="w-8 h-8 bg-amber-50 rounded-lg flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-wrench text-amber-500 text-sm"></i>
+                </span>
+                <h3 class="font-semibold text-slate-700 text-sm">Tools &amp; DevOps</h3>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-pill">Git &amp; GitHub</span>
+                <span class="skill-pill">GitHub Actions</span>
+                <span class="skill-pill">Postman</span>
+                <span class="skill-pill">n8n</span>
+                <span class="skill-pill">Prisma ORM</span>
+              </div>
+            </div>
+
+          </div>
         </div>
-          <h3>RAG Knowledge Retrieval API</h3>
-          <p>
-            Tech: Python, FastAPI, ChromaDB, Groq LLM, REST API <br />
-            • Developed a Retrieval-Augmented Generation (RAG) backend
-            application using FastAPI to enable semantic search and question
-            answering over custom knowledge.<br />
-            • Implemented vector embedding storage and retrieval using ChromaDB
-            for similarity-based context extraction.<br />
-            • Integrated an external LLM inference API (Groq – LLaMA-3.1-8B) to
-            generate context-aware responses.<br />
-            • Deployed a self-documented REST API with Swagger UI, enabling
-            interactive testing and demonstration of functionality.
-          </p>
-          <a
-            href="https://github.com/parthz-13/RAG-Based-Knowledge-Retrieval-API"
-            target="_blank"
-            >GitHub</a
-          >
-          |
-          <a
-            href="https://rag-based-knowledge-retrieval-api.onrender.com/docs"
-            target="_blank"
-            >Live Demo</a
-          >
-
-          <br /><br />
-          <h3>ElevateCV — AI Resume Reviewer</h3>
-          <p>
-          Tech: Python, FastAPI, React.js, Groq API<br />
-            • Built a high-performance FastAPI backend for resume analysis<br />
-            • Integrated Llama-3.3 via Groq for AI-powered insights<br />
-            • Designed scalable PDF processing pipeline
-          </p>
-          <a href="https://github.com/parthz-13/ElevateCV" target="_blank"
-            >GitHub</a
-          >
-          |
-          <a href="https://elevate-cv-seven.vercel.app/" target="_blank"
-            >Live Demo</a
-          >
-
-          <br /><br />
-
       </section>
 
-      <section id="contact" class="contact-section">
-        <h2>☯ Contact</h2>
-        <p>
-          Email:
-          <a href="mailto:parthsingh1006@gmail.com">parthsingh1006@gmail.com</a
-          ><br />
-          GitHub: <a href="https://github.com/parthz-13">@parthz-13</a><br />
-          LeetCode: <a href="https://leetcode.com/u/_p4rth/">@_p4rth</a>
-        </p>
+      <!-- ════════════════ PROJECTS ════════════════ -->
+      <section id="projects" class="py-24 px-6 bg-slate-50">
+        <div class="max-w-5xl mx-auto reveal">
+          <p class="font-mono text-sm text-amber-600 mb-2 tracking-wider">// projects</p>
+          <h2 class="text-3xl font-bold text-slate-900 mb-12">Things I've Built</h2>
+
+          <div class="grid md:grid-cols-2 gap-5">
+
+            <!-- HiveMind -->
+            <div class="project-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-amber-200 transition-all duration-300 p-6 flex flex-col">
+              <div class="flex items-start justify-between gap-2 mb-1">
+                <h3 class="text-base font-bold text-slate-900">HiveMind</h3>
+                <span class="font-mono text-xs text-slate-400 bg-slate-50 border border-slate-100 px-2 py-0.5 rounded-full shrink-0">Jun 2026</span>
+              </div>
+              <p class="font-mono text-xs text-amber-600 font-medium mb-3 uppercase tracking-widest">Multi-Agent Research System</p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">FastAPI</span>
+                <span class="tech-pill">LangChain</span>
+                <span class="tech-pill">React</span>
+                <span class="tech-pill">Groq</span>
+                <span class="tech-pill">Tavily</span>
+              </div>
+              <ul class="text-xs text-slate-600 space-y-2 mb-6 flex-1 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-mono shrink-0 mt-0.5">▸</span>
+                  Built a 4-stage multi-agent pipeline (Search &rarr; Reader &rarr; Writer &rarr; Critic) using LangChain and Groq-hosted LLaMA models to autonomously generate structured research reports from live web data.
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-mono shrink-0 mt-0.5">▸</span>
+                  Integrated Tavily AI Web Search and BeautifulSoup scraping to retrieve 5 live sources per query, extracting up to 8,000 chars of clean content with automated noise filtering.
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-mono shrink-0 mt-0.5">▸</span>
+                  Engineered FastAPI backend with real-time SSE streaming and React + Tailwind frontend, surfacing all 4 pipeline steps live with no page reloads.
+                </li>
+              </ul>
+              <div class="flex gap-2 mt-auto">
+                <a href="https://github.com/parthz-13/Multi-Agent-Research-System" target="_blank"
+                   class="flex items-center gap-1.5 px-4 py-2 border border-slate-200 bg-white rounded-full text-xs text-slate-700 hover:border-slate-300 hover:bg-slate-50 transition-all font-medium">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <a href="https://multi-agent-research-system-seven.vercel.app/" target="_blank"
+                   class="flex items-center gap-1.5 px-4 py-2 bg-amber-400 text-white rounded-full text-xs hover:bg-amber-500 transition-all font-medium shadow-sm shadow-amber-100">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
+              </div>
+            </div>
+
+            <!-- AskYourPDF -->
+            <div class="project-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-amber-200 transition-all duration-300 p-6 flex flex-col">
+              <div class="flex items-start justify-between gap-2 mb-1">
+                <h3 class="text-base font-bold text-slate-900">AskYourPDF</h3>
+                <span class="font-mono text-xs text-slate-400 bg-slate-50 border border-slate-100 px-2 py-0.5 rounded-full shrink-0">Jan 2026</span>
+              </div>
+              <p class="font-mono text-xs text-amber-600 font-medium mb-3 uppercase tracking-widest">Document Intelligence System</p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">FastAPI</span>
+                <span class="tech-pill">React</span>
+                <span class="tech-pill">PostgreSQL</span>
+                <span class="tech-pill">Qdrant</span>
+                <span class="tech-pill">Jina AI</span>
+              </div>
+              <ul class="text-xs text-slate-600 space-y-2 mb-6 flex-1 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-mono shrink-0 mt-0.5">▸</span>
+                  Engineered a full-stack RAG application enabling users to upload PDFs and query them via natural language, achieving 95%+ accuracy with intelligent fallback to general knowledge.
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-mono shrink-0 mt-0.5">▸</span>
+                  Implemented semantic search using Qdrant vector database with 768-dimensional Jina AI embeddings and cosine similarity thresholding, reducing irrelevant results by 85%.
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-mono shrink-0 mt-0.5">▸</span>
+                  Developed REST API with JWT authentication, user management, and document versioning using FastAPI and PostgreSQL.
+                </li>
+              </ul>
+              <div class="flex gap-2 mt-auto">
+                <a href="https://github.com/parthz-13/Document-Intelligence-System" target="_blank"
+                   class="flex items-center gap-1.5 px-4 py-2 border border-slate-200 bg-white rounded-full text-xs text-slate-700 hover:border-slate-300 hover:bg-slate-50 transition-all font-medium">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <a href="https://document-intelligence-system-ten.vercel.app/" target="_blank"
+                   class="flex items-center gap-1.5 px-4 py-2 bg-amber-400 text-white rounded-full text-xs hover:bg-amber-500 transition-all font-medium shadow-sm shadow-amber-100">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
+              </div>
+            </div>
+
+            <!-- RAG Knowledge Retrieval API -->
+            <div class="project-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-amber-200 transition-all duration-300 p-6 flex flex-col">
+              <div class="flex items-start justify-between gap-2 mb-1">
+                <h3 class="text-base font-bold text-slate-900">RAG Knowledge Retrieval API</h3>
+                <span class="font-mono text-xs text-slate-400 bg-slate-50 border border-slate-100 px-2 py-0.5 rounded-full shrink-0">2025</span>
+              </div>
+              <p class="font-mono text-xs text-amber-600 font-medium mb-3 uppercase tracking-widest">Semantic Search &amp; QA Backend</p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">FastAPI</span>
+                <span class="tech-pill">ChromaDB</span>
+                <span class="tech-pill">Groq LLM</span>
+                <span class="tech-pill">REST API</span>
+              </div>
+              <ul class="text-xs text-slate-600 space-y-2 mb-6 flex-1 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-mono shrink-0 mt-0.5">▸</span>
+                  Developed a RAG backend using FastAPI enabling semantic search and question answering over custom knowledge bases.
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-mono shrink-0 mt-0.5">▸</span>
+                  Implemented vector embedding storage and retrieval with ChromaDB for similarity-based context extraction.
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-mono shrink-0 mt-0.5">▸</span>
+                  Deployed self-documented REST API with Swagger UI for interactive testing and demonstration.
+                </li>
+              </ul>
+              <div class="flex gap-2 mt-auto">
+                <a href="https://github.com/parthz-13/RAG-Based-Knowledge-Retrieval-API" target="_blank"
+                   class="flex items-center gap-1.5 px-4 py-2 border border-slate-200 bg-white rounded-full text-xs text-slate-700 hover:border-slate-300 hover:bg-slate-50 transition-all font-medium">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <a href="https://rag-based-knowledge-retrieval-api.onrender.com/docs" target="_blank"
+                   class="flex items-center gap-1.5 px-4 py-2 bg-amber-400 text-white rounded-full text-xs hover:bg-amber-500 transition-all font-medium shadow-sm shadow-amber-100">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
+              </div>
+            </div>
+
+            <!-- ElevateCV -->
+            <div class="project-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-amber-200 transition-all duration-300 p-6 flex flex-col">
+              <div class="flex items-start justify-between gap-2 mb-1">
+                <h3 class="text-base font-bold text-slate-900">ElevateCV</h3>
+                <span class="font-mono text-xs text-slate-400 bg-slate-50 border border-slate-100 px-2 py-0.5 rounded-full shrink-0">2025</span>
+              </div>
+              <p class="font-mono text-xs text-amber-600 font-medium mb-3 uppercase tracking-widest">AI Resume Reviewer</p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">FastAPI</span>
+                <span class="tech-pill">React.js</span>
+                <span class="tech-pill">Groq API</span>
+                <span class="tech-pill">LLaMA-3.3</span>
+              </div>
+              <ul class="text-xs text-slate-600 space-y-2 mb-6 flex-1 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-mono shrink-0 mt-0.5">▸</span>
+                  Built a high-performance FastAPI backend for AI-powered resume analysis with structured feedback generation.
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-mono shrink-0 mt-0.5">▸</span>
+                  Integrated LLaMA-3.3 via Groq API for deep resume insights and actionable improvement suggestions.
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-400 font-mono shrink-0 mt-0.5">▸</span>
+                  Designed a scalable PDF processing pipeline with real-time AI-powered analysis results.
+                </li>
+              </ul>
+              <div class="flex gap-2 mt-auto">
+                <a href="https://github.com/parthz-13/ElevateCV" target="_blank"
+                   class="flex items-center gap-1.5 px-4 py-2 border border-slate-200 bg-white rounded-full text-xs text-slate-700 hover:border-slate-300 hover:bg-slate-50 transition-all font-medium">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <a href="https://elevate-cv-seven.vercel.app/" target="_blank"
+                   class="flex items-center gap-1.5 px-4 py-2 bg-amber-400 text-white rounded-full text-xs hover:bg-amber-500 transition-all font-medium shadow-sm shadow-amber-100">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </section>
+
+      <!-- ════════════════ CONTACT ════════════════ -->
+      <section id="contact" class="py-24 px-6 bg-white">
+        <div class="max-w-5xl mx-auto reveal text-center">
+          <p class="font-mono text-sm text-amber-600 mb-2 tracking-wider">// contact.init()</p>
+          <h2 class="text-3xl font-bold text-slate-900 mb-4">Get In Touch</h2>
+          <p class="text-slate-500 text-sm mb-10 max-w-md mx-auto">
+            Open to internships, full-time roles, and interesting projects. Feel free to reach out!
+          </p>
+
+          <!-- Terminal box -->
+          <div class="max-w-sm mx-auto mb-10 bg-slate-50 border border-slate-100 rounded-xl p-4 text-left font-mono text-xs text-slate-500 shadow-sm">
+            <p><span class="text-amber-500">&gt;</span> establishing secure channel...</p>
+            <p class="mt-1"><span class="text-amber-500">&gt;</span> status: <span class="text-green-500 font-medium">ONLINE ●</span></p>
+            <p class="mt-1"><span class="text-amber-500">&gt;</span> send message: <span class="typewriter-cursor"> </span></p>
+          </div>
+
+          <!-- Contact cards -->
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="mailto:workparthwork@gmail.com"
+               class="contact-card flex items-center gap-3 px-6 py-4 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md hover:border-amber-200 transition-all group text-left">
+              <span class="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center group-hover:bg-amber-400 transition-colors shrink-0">
+                <i class="fa-solid fa-envelope text-amber-500 group-hover:text-white transition-colors text-sm"></i>
+              </span>
+              <div>
+                <p class="text-xs text-slate-400 font-medium font-mono">email</p>
+                <p class="text-sm font-semibold text-slate-700">workparthwork@gmail.com</p>
+              </div>
+            </a>
+
+            <a href="https://github.com/parthz-13" target="_blank"
+               class="contact-card flex items-center gap-3 px-6 py-4 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md hover:border-slate-200 transition-all group text-left">
+              <span class="w-10 h-10 bg-slate-50 rounded-xl flex items-center justify-center group-hover:bg-slate-800 transition-colors shrink-0">
+                <i class="fa-brands fa-github text-slate-600 group-hover:text-white transition-colors text-sm"></i>
+              </span>
+              <div>
+                <p class="text-xs text-slate-400 font-medium font-mono">github</p>
+                <p class="text-sm font-semibold text-slate-700">@parthz-13</p>
+              </div>
+            </a>
+
+            <a href="https://leetcode.com/u/_p4rth/" target="_blank"
+               class="contact-card flex items-center gap-3 px-6 py-4 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md hover:border-orange-200 transition-all group text-left">
+              <span class="w-10 h-10 bg-orange-50 rounded-xl flex items-center justify-center group-hover:bg-orange-500 transition-colors shrink-0">
+                <i class="fa-solid fa-code text-orange-400 group-hover:text-white transition-colors text-sm"></i>
+              </span>
+              <div>
+                <p class="text-xs text-slate-400 font-medium font-mono">leetcode</p>
+                <p class="text-sm font-semibold text-slate-700">@_p4rth</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
     </main>
+
+    <!-- Footer -->
+    
+
+    <!-- ════════════════ SCRIPTS ════════════════ -->
+    <script>
+      /* ── 1. Floating dot canvas ── */
+      (function () {
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let dots = [];
+        const COUNT = 55;
+
+        function resize() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        }
+
+        function mkDot() {
+          return {
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            r: Math.random() * 2 + 1,
+            speed: Math.random() * 0.4 + 0.1,
+            alpha: Math.random() * 0.4 + 0.1,
+          };
+        }
+
+        function init() {
+          resize();
+          dots = Array.from({ length: COUNT }, mkDot);
+        }
+
+        function draw() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          dots.forEach(d => {
+            ctx.beginPath();
+            ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(251,191,36,${d.alpha})`; // amber-300
+            ctx.fill();
+            d.y -= d.speed;
+            d.alpha -= 0.0008;
+            if (d.y < -10 || d.alpha <= 0) Object.assign(d, mkDot(), { y: canvas.height + 10 });
+          });
+          requestAnimationFrame(draw);
+        }
+
+        window.addEventListener('resize', () => { resize(); });
+        init();
+        draw();
+      })();
+
+      /* ── 2. Typewriter ── */
+      (function () {
+        const el = document.getElementById('typewriter');
+        const roles = ['Backend Developer', 'AI Builder', 'FastAPI Specialist', 'Open-Source Contributor'];
+        let ri = 0, ci = 0, deleting = false;
+
+        function tick() {
+          const word = roles[ri];
+          el.textContent = deleting ? word.slice(0, ci--) : word.slice(0, ci++);
+
+          let delay = deleting ? 60 : 100;
+          if (!deleting && ci > word.length) { delay = 1800; deleting = true; }
+          else if (deleting && ci < 0) { deleting = false; ri = (ri + 1) % roles.length; ci = 0; delay = 300; }
+
+          setTimeout(tick, delay);
+        }
+        tick();
+      })();
+
+      /* ── 3. Scroll reveal ── */
+      (function () {
+        const obs = new IntersectionObserver(entries => {
+          entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+      })();
+    </script>
+
   </body>
 </html>
