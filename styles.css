@@ -18,14 +18,14 @@ html {
 #typewriter::after {
   content: '|';
   animation: blink 1s step-end infinite;
-  color: #f59e0b;
+  color: #D05A3F;
   margin-left: 2px;
 }
 
 .typewriter-cursor::after {
   content: '|';
   animation: blink 1s step-end infinite;
-  color: #f59e0b;
+  color: #D05A3F;
 }
 
 @keyframes blink {
@@ -59,9 +59,9 @@ html {
 }
 
 .skill-pill:hover {
-  border-color: #fbbf24;
-  color: #b45309;
-  background: #fffbeb;
+  border-color: #DA7A64;
+  color: #973721;
+  background: #FAF0ED;
 }
 
 /* ── Tech pills (project cards) ── */
@@ -88,7 +88,7 @@ html {
   left: 0;
   width: 0;
   height: 2px;
-  background: #f59e0b;
+  background: #D05A3F;
   border-radius: 1px;
   transition: width 0.25s ease;
 }
